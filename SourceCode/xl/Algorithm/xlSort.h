@@ -24,19 +24,19 @@ namespace xl
     namespace Sort
     {
         template <typename T>
-        bool DirectComparaor(const T &t1, const T &t2)
+        bool DirectComparer(const T &t1, const T &t2)
         {
             return t1 < t2;
         }
 
         template <typename T>
-        bool DereferencingComparaor(const T &t1, const T &t2)
+		bool DereferencingComparer(const T &t1, const T &t2)
         {
             return *ti < *t2;
         }
     
         template <typename T>
-        void BubbleSort(T tData[], size_t nSize, xl::Function<bool (const T &, const T &)> fnComparor = DirectComparaor<T>)
+        void BubbleSort(T tData[], size_t nSize, xl::Function<bool (const T &, const T &)> fnComparor = DirectComparer<T>)
         {
             for (size_t i = 0; i < nSize; ++i)
             {
@@ -59,7 +59,7 @@ namespace xl
         }
 
         template <typename T>
-        void DoubleBubbleSort(T tData[], size_t nSize, xl::Function<bool (const T &, const T &)> fnComparor = DirectComparaor<T>)
+        void DoubleBubbleSort(T tData[], size_t nSize, xl::Function<bool (const T &, const T &)> fnComparor = DirectComparer<T>)
         {
             size_t i = 0, j = nSize - 1;
 
@@ -108,7 +108,7 @@ namespace xl
         }
 
         template <typename T>
-        void InsertionSort(T tData[], size_t nSize, xl::Function<bool (const T &, const T &)> fnComparor = DirectComparaor<T>)
+        void InsertionSort(T tData[], size_t nSize, xl::Function<bool (const T &, const T &)> fnComparor = DirectComparer<T>)
         {
             for (size_t i = 1; i < nSize; ++i)
             {
@@ -129,7 +129,7 @@ namespace xl
         }
 
         template <typename T>
-        void SelectionSort(T tData[], size_t nSize, xl::Function<int (const T &, const T &)> fnComparor = DirectComparaor<T>)
+        void SelectionSort(T tData[], size_t nSize, xl::Function<int (const T &, const T &)> fnComparor = DirectComparer<T>)
         {
             for (size_t i = 0; i < nSize; ++i)
             {
@@ -151,7 +151,7 @@ namespace xl
         }
 
         template <typename T>
-        void ShellSort(T tData[], size_t nSize, xl::Function<bool (const T &, const T &)> fnComparor = DirectComparaor<T>)
+        void ShellSort(T tData[], size_t nSize, xl::Function<bool (const T &, const T &)> fnComparor = DirectComparer<T>)
         {
             for (size_t gap = nSize / 2; gap > 0; gap /= 2)
             {
@@ -183,7 +183,7 @@ namespace xl
         }
 
         template <typename T>
-        void HeapSort(T tData[], size_t nSize, xl::Function<bool (const T &, const T &)> fnComparor = DirectComparaor<T>)
+        void HeapSort(T tData[], size_t nSize, xl::Function<bool (const T &, const T &)> fnComparor = DirectComparer<T>)
         {
             // Build the heap (except the root element)
 
@@ -242,7 +242,7 @@ namespace xl
         }
 
         template <typename T>
-        void QuickSort(T tData[], size_t nSize, xl::Function<bool (const T &, const T &)> fnComparor = DirectComparaor<T>)
+        void QuickSort(T tData[], size_t nSize, xl::Function<bool (const T &, const T &)> fnComparor = DirectComparer<T>)
         {
             size_t i = 0, j = nSize - 1,  k = nSize / 2;
 
